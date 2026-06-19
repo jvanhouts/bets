@@ -34,6 +34,8 @@ haven't applied yet:
   add the per-bet sources table.
 - `supabase/migration-sources-shared.sql` — reshape the per-bet `sources` table into a shared
   `sources` entity + `bet_sources` join table (preserves links).
+- `supabase/migration-finance-encryption.sql` — add the browser-encrypted finance vault and
+  ciphertext columns. Existing finance rows are encrypted after the user creates their vault.
 
 Types are validated with zod (`src/lib/schema.ts`). If Supabase is unreachable or returns data
 that doesn't match the schema, the app falls back to the static dataset in `src/lib/bets.ts`.
